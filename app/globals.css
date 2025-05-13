@@ -1,0 +1,234 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255; /* White text */
+  --background-start-rgb: 0, 0, 0;  /* Black background */
+  --background-end-rgb: 0, 0, 0;    /* Black background */
+}
+
+/* Body - Black background, white text */
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-start-rgb));
+}
+
+/* GrapesJS editor styles */
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+#gjs {
+  border: none;
+  height: calc(100vh - 64px);
+  overflow: hidden;
+}
+
+/* Reset some default styling */
+.gjs-cv-canvas {
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.gjs-block {
+  width: auto;
+  height: auto;
+  min-height: auto;
+}
+
+/* Theming */
+.gjs-one-bg {
+  background-color: #000; /* Black background for blocks */
+}
+
+.gjs-two-color {
+  color: #fff;  /* White text color */
+}
+
+.gjs-three-bg {
+  background-color: #fff;  /* White background for certain elements */
+  color: #000;  /* Black text */
+}
+
+.gjs-four-color,
+.gjs-four-color-h:hover {
+  color: #fff;  /* White text color on hover */
+}
+
+/* Panel styling */
+.panel__top {
+  padding: 0;
+  width: 100%;
+  display: flex;
+  position: initial;
+  justify-content: center;
+  background-color: #111; /* Dark panel background */
+}
+
+.panel__basic-actions {
+  position: initial;
+}
+
+.panel__devices {
+  position: initial;
+}
+
+.panel__switcher {
+  position: initial;
+}
+
+.editor-row {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  height: calc(100% - 40px);
+}
+
+.editor-canvas {
+  flex-grow: 1;
+}
+
+/* Block manager styling */
+.gjs-block {
+  width: 100%;
+  height: auto;
+  min-height: 50px;
+  padding: 1em;
+  margin-bottom: 10px;
+  text-align: center;
+  box-sizing: border-box;
+  border: 1px solid #fff; /* White border */
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.gjs-block:hover {
+  box-shadow: 0 3px 4px rgba(255, 255, 255, 0.15); /* White shadow on hover */
+  border-color: #fff;
+}
+
+.gjs-block-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.blocks-container {
+  background-color: #000;  /* Black background for block container */
+  color : black;
+  border-right: 1px solid #444;  /* Dark border */
+  padding: 10px;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.gjs-block-category {
+  margin-bottom: 15px;
+}
+
+.gjs-title {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #fff; /* White border */
+}
+
+/* Adjust editor layout */
+.editor-row {
+  display: flex;
+  height: calc(100vh - 104px); /* Account for header and panel top */
+}
+
+.editor-canvas {
+  flex-grow: 1;
+  position: relative;
+}
+
+#gjs {
+  height: 100%;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 0%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 0%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 10%;
+    --muted-foreground: 0 0% 60%;
+    --accent: 0 0% 10%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 100% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 100%;
+    --input: 0 0% 100%;
+    --ring: 0 0% 0%;
+    --chart-1: 0 0% 100%;
+    --chart-2: 0 0% 100%;
+    --chart-3: 0 0% 100%;
+    --chart-4: 0 0% 100%;
+    --chart-5: 0 0% 100%;
+    --sidebar-background: 0 0% 0%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 0 0% 10%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 10%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 0 0% 100%;
+    --sidebar-ring: 0 0% 100%;
+  }
+
+  .dark {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 0%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 0%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 10%;
+    --muted-foreground: 0 0% 60%;
+    --accent: 0 0% 10%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 100% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 100%;
+    --input: 0 0% 100%;
+    --ring: 0 0% 0%;
+    --chart-1: 0 0% 100%;
+    --chart-2: 0 0% 100%;
+    --chart-3: 0 0% 100%;
+    --chart-4: 0 0% 100%;
+    --chart-5: 0 0% 100%;
+    --sidebar-background: 0 0% 0%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 0 0% 10%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 10%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 0 0% 100%;
+    --sidebar-ring: 0 0% 100%;
+  }
+}
